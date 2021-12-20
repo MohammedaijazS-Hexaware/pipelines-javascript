@@ -14,18 +14,18 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-- task: SonarQubePrepare@5
-  inputs:
-    SonarQube: 'ci-cd-node-js'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'CI-CD_NodeJs_CI-CD_NodeJs'
-    cliSources: '.'
+# - task: SonarQubePrepare@5
+#   inputs:
+#     SonarQube: 'ci-cd-node-js'
+#     scannerMode: 'CLI'
+#     configMode: 'manual'
+#     cliProjectKey: 'CI-CD_NodeJs_CI-CD_NodeJs'
+#     cliSources: '.'
 - script: |
     npm install
     npm run build
     npm test
-- task: SonarQubeAnalyze@5
+# - task: SonarQubeAnalyze@5
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
